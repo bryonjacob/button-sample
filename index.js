@@ -10,6 +10,11 @@ app.get('/', function(request, response) {
   response.render('index.html')
 })
 
+
+app.get('/env', function(request, response) {
+  response.send(process.env.SECRET_TOKEN)
+})
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
